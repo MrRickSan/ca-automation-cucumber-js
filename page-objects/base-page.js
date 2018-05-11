@@ -2,7 +2,10 @@
 class BasePage {
   constructor () {
     this.headingText = element(by.tagName('h1'))
-    this.submitBtn = element(by.css('.submit-btn'))
+
+    this.submitBtn = function (btnName) {
+      return element(by.cssContainingText('.submit-btn', btnName))
+    }
   }
 
   get (url) {
@@ -13,8 +16,8 @@ class BasePage {
     return helper.getText(this.headingText)
   }
 
-  clickSubmitBtn () {
-    return helper.click(this.submitBtn)
+  clickSubmitBtn (btnName) {
+    return helper.click(this.submitBtn(btnName))
   }
 }
 
