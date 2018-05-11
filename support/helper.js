@@ -13,6 +13,12 @@ function Helper () {
     locator.click()
   }
 
+  // receives a locator and return the text from it
+  this.getText = function (locator) {
+    browser.wait(protractor.ExpectedConditions.visibilityOf(locator), waitTime)
+    return locator.getText()
+  }
+
   // receives a locator and the input data and write the input data
   this.sendKeys = function (locator, data) {
     browser.wait(protractor.ExpectedConditions.visibilityOf(locator), waitTime)

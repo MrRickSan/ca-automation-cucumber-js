@@ -1,12 +1,12 @@
 /* global element, browser, by, helper, protractor */
-class ConsumerAffairPage {
+class HomePage {
   constructor () {
     this.writeReview = element(by.css('.ca-hdr__review-btn'))
   }
 
-  get () {
-    return browser.get('/')
+  clickWriteReview () {
+    return helper.click(this.writeReview)
   }
 }
 
-module.exports = new ConsumerAffairPage()
+module.exports = new HomePage()

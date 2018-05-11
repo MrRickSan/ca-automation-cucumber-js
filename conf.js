@@ -6,8 +6,6 @@ chai.use(chaiAsPromised)
 exports.config = {
   directConnect: true,
 
-  baseUrl: 'https://www.consumeraffairs.com',
-
   // The details of execution platform
   capabilities: {
     browserName: 'chrome',
@@ -34,6 +32,9 @@ exports.config = {
   },
 
   specs: ['./features/*.feature'],
+
+  getPageTimeout: 10 * 1000,
+  allScriptsTimeout: 10 * 1000,
 
   onPrepare: () => {
     browser.driver.manage().deleteAllCookies() // eslint-disable-line
