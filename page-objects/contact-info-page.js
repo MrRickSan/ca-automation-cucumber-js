@@ -1,4 +1,4 @@
-/* global element, browser, by, helper, protractor */
+/* global element, by, helper */
 class ContactInfoPage {
   constructor () {
     this.firstName = element(by.id('id_first_name'))
@@ -8,7 +8,7 @@ class ContactInfoPage {
     this.address2 = element(by.id('id_address2'))
     this.city = element(by.id('id_city'))
     this.zip = element(by.id('id_zip'))
-    this.country = element(by.css('#id_country > option:nth-child(2)'))
+    this.country = element(by.css('#id_country > option:nth-child(4)'))
     this.newsletter = element(by.id('id_newsletter'))
 
     this.state = function (state) {

@@ -1,4 +1,5 @@
 /* globals browser, protractor */
+const faker = require('faker')
 
 function Helper () {
   var waitTime = 30000
@@ -36,6 +37,18 @@ function Helper () {
   this.clear = function (locator) {
     browser.wait(protractor.ExpectedConditions.visibilityOf(locator), waitTime)
     locator.clear()
+  }
+
+  this.createFakeContactInfo = function () {
+    let fakeData = {}
+    fakeData.firstName = faker.name.firstName()
+    fakeData.lastName = faker.name.lastName()
+    fakeData.phone = faker.phone.phoneNumberFormat()
+    fakeData.streetName = faker.address.streetName()
+    fakeData.secondaryAddress = faker.address.secondaryAddress()
+    fakeData.zipCode = faker.address.zipCode()
+    fakeData.city = faker.address.city()
+    return fakeData
   }
 }
 

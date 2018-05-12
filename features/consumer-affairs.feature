@@ -17,4 +17,8 @@ Feature: Test consumer affairs web page
     When I fill out the form using a random test email and password and click "Continue"
     Then I should be taken to a Contact Information page with a title and heading of "Create an account"
     When I fill in the contact information form
-    Then I click on "Create Account"
+    And I click on "Create account"
+    Then I should be taken to a page titled "Getting to know you" with a heading of "Getting to know you"
+    When I click on the "I don't like custom content" link under the "Done" button
+    Then I should be taken to a page titled "Thanks for creating an account" with a heading of "Thank you"
+    

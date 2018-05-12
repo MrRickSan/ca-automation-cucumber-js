@@ -1,31 +1,30 @@
-/* global expect, browser, require, module */
-const ContactInfoPage = require('../page-objects/contact-info-page')
-const BasePage = require('../page-objects/base-page')
-const faker = require('faker')
+/* global expect, require, module, helper */
+const contactInfoPage = require('../page-objects/contact-info-page')
+const basePage = require('../page-objects/base-page')
 
-var contactInfoPageSteps = function () {
+var ContactInfoPageSteps = function () {
   'use strict'
 
   this.Then(/^I should be taken to a Contact Information page with a title and heading of "([^"]*)"$/, function (heading) {
-    return expect(BasePage.getPageHeading()).to.eventually.equal(heading)
+    return expect(basePage.getPageHeading()).to.eventually.equal(heading)
   })
 
-  this.When(/^I fill in the contact information form$/, function (heading) {
-    ContactInfoPage.inputFirstName(faker.name.firstName())
-    ContactInfoPage.inputLastName(faker.name.lastName())
-    ContactInfoPage.inputPhone(faker.phone.phoneNumber())
-    ContactInfoPage.inputAddress(faker.address.streetName())
-    ContactInfoPage.inputAddress2(faker.address.secondaryAddress())
-    ContactInfoPage.inputCity(faker.address.city())
-    ContactInfoPage.selectState(faker.address.state())
-    ContactInfoPage.inputZip(faker.address.zipCode())
-    ContactInfoPage.selectCountry()
-    ContactInfoPage.clickNewsLetter()
+  this.When(/^I fill in the contact information form$/, function () {
+    var data = helper.createFakeContactInfo()
+    contactInfoPage.inputFirstName(data.firstName)
+    contactInfoPage.inputLastName(data.lastName)
+    contactInfoPage.inputPhone(data.phone)
+    contactInfoPage.inputAddress(data.streetName)
+    contactInfoPage.inputAddress2(data.secondaryAddress)
+    contactInfoPage.inputZip(data.zipCode)
+    contactInfoPage.selectCountry()
+    contactInfoPage.inputCity(data.city)
+    return contactInfoPage.clickNewsLetter()
   })
 
   this.Then(/^I click on "([^"]*)"$/, function (btnName) {
-    return expect(BasePage.clickSubmitBtn(btnName))
+    return expect(basePage.clickSubmitBtn(btnName))
   })
 }
 
-module.exports = contactInfoPageSteps
+module.exports = ContactInfoPageSteps

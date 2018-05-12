@@ -1,4 +1,4 @@
-/* global element, browser, by, helper, protractor */
+/* global element, by, helper */
 class ReviewPage {
   constructor () {
     this.createAccBtn = element(by.css(

@@ -1,4 +1,4 @@
-/* global element, browser, by, helper, protractor */
+/* global element, browser, by, helper */
 class BasePage {
   constructor () {
     this.headingText = element(by.tagName('h1'))

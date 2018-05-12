@@ -1,6 +1,6 @@
-/* global expect, browser, require, module */
-const RegisterPage = require('../page-objects/register-page')
-const BasePage = require('../page-objects/base-page')
+/* global require, module */
+const registerPage = require('../page-objects/register-page')
+const basePage = require('../page-objects/base-page')
 const faker = require('faker')
 
 var RegisterPageSteps = function () {
@@ -9,11 +9,11 @@ var RegisterPageSteps = function () {
   this.When(/^I fill out the form using a random test email and password and click "([^"]*)"/, function (btnName) {
     let email = faker.internet.email().toLowerCase()
     let password = faker.internet.password()
-    RegisterPage.inputEmail(email)
-    RegisterPage.inputEmailConfirm(email)
-    RegisterPage.inputPassword(password)
-    RegisterPage.inputPasswordConfirm(password)
-    return BasePage.clickSubmitBtn(btnName)
+    registerPage.inputEmail(email)
+    registerPage.inputEmailConfirm(email)
+    registerPage.inputPassword(password)
+    registerPage.inputPasswordConfirm(password)
+    return basePage.clickSubmitBtn(btnName)
   })
 }
 

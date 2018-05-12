@@ -1,4 +1,4 @@
-/* global element, browser, by, helper, protractor */
+/* global element, by, helper */
 class RegisterPage {
   constructor () {
     this.emailInput = element(by.id('id_email'))
