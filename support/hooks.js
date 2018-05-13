@@ -2,7 +2,7 @@ var Cucumber = require('cucumber')
 var fs = require('fs')
 var reporter = require('cucumber-html-reporter')
 
-var hooks = async function () {
+var hooks = function () {
   'use strict'
 
   var jsonReports = process.cwd() + '/reports/json'

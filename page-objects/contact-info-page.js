@@ -10,7 +10,6 @@ class ContactInfoPage {
     this.zip = element(by.id('id_zip'))
     this.country = element(by.css('#id_country > option:nth-child(4)'))
     this.newsletter = element(by.id('id_newsletter'))
-
     this.state = function (state) {
       return element(by.id('id_state')).element(by.cssContainingText('option', state))
     }

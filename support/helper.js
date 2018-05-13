@@ -50,6 +50,15 @@ function Helper () {
     fakeData.city = faker.address.city()
     return fakeData
   }
+
+  this.createFakeReview = function () {
+    let fakeData = {}
+    fakeData.companyName = faker.company.companyName()
+    fakeData.product = faker.commerce.product()
+    fakeData.subject = faker.lorem.sentence(5)
+    fakeData.description = faker.lorem.paragraph(10)
+    return fakeData
+  }
 }
 
 module.exports = new Helper()

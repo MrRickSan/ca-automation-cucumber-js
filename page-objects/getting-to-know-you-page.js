@@ -3,7 +3,6 @@
 class GettingToKnowYouPage {
   constructor () {
     this.done = element(by.css('input.btn'))
-
     this.dontLikeCustomContent = function (linkText) {
       return element(by.linkText(linkText))
     }

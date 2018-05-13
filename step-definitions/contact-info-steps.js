@@ -19,11 +19,11 @@ var ContactInfoPageSteps = function () {
     contactInfoPage.inputZip(data.zipCode)
     contactInfoPage.selectCountry()
     contactInfoPage.inputCity(data.city)
-    return contactInfoPage.clickNewsLetter()
+    contactInfoPage.clickNewsLetter()
   })
 
   this.Then(/^I click on "([^"]*)"$/, function (btnName) {
-    return expect(basePage.clickSubmitBtn(btnName))
+    expect(basePage.clickSubmitBtn(btnName))
   })
 }
 

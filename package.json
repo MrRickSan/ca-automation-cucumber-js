@@ -1,7 +1,5 @@
 {
-  "name": "ca-automation-cucumber-js",
-  "version": "1.0.0",
-  "description": "Automation test using protractor and cucumber for consumer-affairs web site",
+  "description": "Automation test using protractor and cucumber in the consumer-affairs web site",
   "dependencies": {
     "chai": "^3.5.0",
     "chai-as-promised": "~6.0.0",
